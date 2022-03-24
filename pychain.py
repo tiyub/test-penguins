@@ -85,7 +85,7 @@ class Block:
 
     creator_id: int
     prev_hash: str = "0"
-    timestamp: str = datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M:%S")
+    timestamp: str = datetime.datetime.now(datetime.timezone.utc)
     nonce: int = 0
 
     def hash_block(self):
