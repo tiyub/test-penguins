@@ -85,7 +85,7 @@ class Block:
 
     creator_id: int
     prev_hash: str = "0"
-    timestamp: str = datetime.datetime.utcnow().strftime("%H:%M:%S")
+    timestamp: str = datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M:%S")
     nonce: int = 0
 
     def hash_block(self):
@@ -193,7 +193,6 @@ if st.button("Add Block"):
     prev_block = pychain.chain[-1]
     prev_block_hash = prev_block.hash_block()
 
-    # @TODO
     # Update `new_block` so that `Block` consists of an attribute named `record`
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
